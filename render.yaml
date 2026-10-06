@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: tiny-treasures
+    runtime: node
+    plan: free
+    buildCommand: npm install --include=dev && npm run build
+    startCommand: npm start
+    envVars:
+      - key: ADMIN_PIN
+        sync: false   # you type your own secret PIN in the Render dashboard
